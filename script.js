@@ -1,7 +1,7 @@
 document.getElementById('search-form').addEventListener('submit', async (event) => {
     event.preventDefault();
     const city = document.getElementById('city-input').value;
-    const apiKey = 'a67ad4688a2344d990080412241409'; // Replace with your actual API key from WeatherAPI
+    const apiKey = 'a67ad4688a2344d990080412241409'; // todo: add env here 
     const weatherInfoDiv = document.getElementById('weather-info');
     const errorMessageDiv = document.getElementById('error-message');
 
@@ -15,7 +15,7 @@ document.getElementById('search-form').addEventListener('submit', async (event) 
 
         const data = await response.json();
           console.log(data);
-        // Display the weather data
+       
         const weatherHTML = `
             <h2>Weather in ${data.location.name}</h2>
             <image src="${data.current.condition.icon}" class="image"></image>
@@ -30,3 +30,5 @@ document.getElementById('search-form').addEventListener('submit', async (event) 
         errorMessageDiv.textContent = error.message;
     }
 });
+
+//possible TODO: Header w Loosely Logo with Github repo Link 
